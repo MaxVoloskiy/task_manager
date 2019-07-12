@@ -1,5 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./components/App";
+import TodoApp, {todoApp} from './App'
+import { Provider } from 'react-redux';
+import { createStore } from "redux";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(
+    <Provider store={createStore(todoApp)}>
+        <TodoApp/>
+    </Provider>,
+    document.getElementById("root")
+);
